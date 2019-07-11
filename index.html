@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        .wrapper {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            background: white;
+            display: block;
+        }
+
+        .instruction {
+            background: #8e8e8e;
+            border-radius: 10px;
+        }
+
+        .instruction ul {
+            list-style: none;
+        }
+
+        .instruction ul li {
+            display: flex;
+            align-items: center;
+            padding: 10px 0
+        }
+
+        .game-box {
+            padding: 35px;
+            border: 1px solid #ccc;
+            border-radius: 29px;
+            background: #1b1b1b
+        }
+
+        .red-ball {
+            width: 30px;
+            height: 30px;
+            border-radius: 100px;
+            background-color: #ff1744;
+            margin-right: 20px
+        }
+
+        .green-ball {
+            width: 30px;
+            height: 30px;
+            border-radius: 100px;
+            background-color: #00897b;
+            margin-right: 20px
+        }
+
+        .blue-ball {
+            width: 30px;
+            height: 30px;
+            border-radius: 100px;
+            background-color: #3d5afe;
+            margin-right: 20px
+        }
+
+        .yellow-ball {
+            width: 30px;
+            height: 30px;
+            border-radius: 100px;
+            background-color: #ffee58;
+            margin-right: 20px
+        }
+
+        .overflow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 18;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.5);
+        }
+
+        .overflow.hide {
+            z-index: -1
+        }
+
+        .display {
+            position: relative;
+        }
+
+
+        .again {
+            display: block;
+            padding: 50px;
+            background: white;
+            border-radius: 10px;
+            text-align: center
+        }
+
+        .again button {
+            cursor: pointer;
+            padding: 10px 31px;
+            background: #3d5afe;
+            color: white;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="game-box">
+            <div id='display' class="display">
+                <canvas id="game-field" width="600" height="500"></canvas>
+                <div class="overflow">
+                    <div class="again">
+                        <p>Нажмите кнопку чтобы начать</p>
+                        <button id='state'>Играть</button>
+                    </div>
+                </div>
+            </div>
+            <div class="instruction">
+                <ul>
+                    <li>
+                        <div class="red-ball"></div>Ускорение шарика
+                    </li>
+                    <li>
+                        <div class="green-ball"></div> Замедление шарика
+                    </li>
+                    <li>
+                        <div class="blue-ball"></div>Увеличение платформы
+                    </li>
+                    <li>
+                        <div class="yellow-ball"></div>Уменьшение платформы
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <script src="build/main.js"></script>
+</body>
+
+</html>
